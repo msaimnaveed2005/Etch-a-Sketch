@@ -12,26 +12,28 @@ function createGrid(size) {
     square.style.width = `${squareSize}px`;
     square.style.height = `${squareSize}px`;
 
-    // initialize tracking
     square.dataset.interactions = 0;
 
     square.addEventListener("mouseover", function () {
       let interactions = Number(square.dataset.interactions);
 
-      // set random color only ONCE
-      if (!square.dataset.color) {
-        square.dataset.color = getRandomColor();
-        square.style.backgroundColor = square.dataset.color;
+      if (!square.dataset.r) {
+        square.dataset.r = Math.floor(Math.random() * 256);
+        square.dataset.g = Math.floor(Math.random() * 256);
+        square.dataset.b = Math.floor(Math.random() * 256);
       }
 
-      // increase darkness step by step
       if (interactions < 10) {
         interactions++;
         square.dataset.interactions = interactions;
-
-        // apply opacity gradually
-        square.style.opacity = interactions / 10;
       }
+
+      const alpha = interactions / 10;
+      const r = square.dataset.r;
+      const g = square.dataset.g;
+      const b = square.dataset.b;
+
+      square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${alpha})`;
     });
 
     container.appendChild(square);
@@ -40,7 +42,6 @@ function createGrid(size) {
 
 button.addEventListener("click", function () {
   let userInput = prompt("Enter number of squares per side, max 100:");
-
   userInput = Number(userInput);
 
   if (userInput > 0 && userInput <= 100) {
@@ -49,13 +50,5 @@ button.addEventListener("click", function () {
     alert("Please enter a number between 1 and 100.");
   }
 });
-
-function getRandomColor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
-  return `rgb(${r}, ${g}, ${b})`;
-}
 
 createGrid(16);
