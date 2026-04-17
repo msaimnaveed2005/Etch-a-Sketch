@@ -1,75 +1,65 @@
-Etch-a-Sketch Grid
+🎨 Etch-a-Sketch Grid
 
-A dynamic, interactive drawing grid built using HTML, CSS (Flexbox), and JavaScript. Users can draw by hovering over squares, customize grid size, and experience progressive color effects.
+An interactive browser-based drawing grid built with HTML, CSS (Flexbox), and JavaScript.
+Draw by hovering over squares, customize grid size, and watch colors build progressively.
 
 🚀 Features
 🧱 Dynamic Grid Generation
-Default 16 × 16 grid
-Generates squares using JavaScript (no manual HTML)
-🎯 Hover Drawing Effect
-Hover over squares to draw like a pixelated pen
+Default 16 × 16 grid, generated entirely with JavaScript
+🎯 Hover Drawing
+Draw by moving your cursor across the grid
 🎨 Random Colors
-Each square gets a random RGB color on first interaction
+Each square gets a unique RGB color on first interaction
 🌑 Progressive Darkening
-Each hover increases color intensity by 10%
-Fully colored after 10 interactions
+Each hover increases opacity by 10% until fully visible
 🔄 Resizable Grid
-Button allows user to input grid size
-Supports up to 100 × 100
-Maintains fixed container size
-🛠️ Technologies Used
+User-defined grid size up to 100 × 100
+🛠️ Built With
 HTML
 CSS (Flexbox)
-JavaScript (DOM Manipulation & Events)
+JavaScript (DOM & Events)
 📦 How It Works
-1. Grid Creation
-Squares are created dynamically using a loop
+Grid Creation
+Squares are generated dynamically using JavaScript
 Total squares = size × size
-Each square adjusts size based on container width
-2. Hover Interaction
-mouseover event applied to each square
-On first hover:
-Random RGB color is assigned
-On subsequent hovers:
-Color darkens gradually using RGBA
-3. Grid Resize
-Button triggers a prompt()
-User enters grid size (1–100)
-Old grid is cleared and new grid is generated
-📐 Layout Details
-Container uses Flexbox
-flex-wrap: wrap creates grid rows
-Square size is calculated dynamically:
-square size = container width / number of squares per side
-⚠️ Input Constraints
-Minimum: 1
-Maximum: 100
-Prevents performance issues with large grids
-🧠 Key Concepts Learned
+Each square scales based on container width
+Hover Interaction
+Uses mouseover event
+First hover assigns a random color
+Repeated hovers increase opacity using rgba()
+Resize Functionality
+Button triggers user input via prompt()
+Grid updates instantly based on new size
+📐 Layout
+Flexbox-based grid system
+flex-wrap: wrap handles row structure
+Fixed container size with responsive square scaling
+⚠️ Constraints
+Minimum grid size: 1
+Maximum grid size: 100
+Prevents performance issues on large grids
+🧠 Concepts Practiced
 DOM manipulation
-Event listeners (mouseover, click)
-Dynamic styling with JavaScript
-Flexbox layout system
-Data persistence using dataset
-RGB vs RGBA color handling
+Event handling (mouseover, click)
+Dynamic styling
+Flexbox layout
+Data handling using dataset
+RGB vs RGBA color logic
 📸 Preview
-
-A pixel-style drawing board where colors build up with interaction.
-<img width="1104" height="521" alt="image" src="https://github.com/user-attachments/assets/7546ca00-c91e-473b-a400-bf777dd4c855" />
-
+/home/msaimnaveed/repos/Etch-a-Sketch/Final_image.png
 📌 Future Improvements
-Click-and-drag drawing (only draw when mouse is pressed)
-Reset/clear button
+Click-and-drag drawing
+Reset / clear button
 Darkening toward black instead of opacity
 Mobile touch support
-CSS Grid version (advanced)
+CSS Grid implementation
 📝 Commit Highlights
-Initialize 16×16 grid with Flexbox
+Initialize 16×16 grid
 Add hover drawing effect
-Implement dynamic grid resizing
-Add random color generation
-Implement progressive darkening effect
-Fix opacity issue using RGBA
+Implement grid resizing
+Add random color logic
+Implement progressive darkening
+Fix opacity handling with RGBA
 📄 License
 
-This project is for learning purposes and part of a frontend development practice.
+This project is for learning purposes and frontend practice.
